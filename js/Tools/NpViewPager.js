@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     },
     swiperItem:{
         flex:1,
+        height:400
         justifyContent:'center',
         backgroundColor:'transparent',
     },
