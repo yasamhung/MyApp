@@ -19,8 +19,8 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     //警告は出てこないため
-    //console.ignoredYellowBox = ['Warning: Each', "Warning: Failed prop type"];
-    //console.disableYellowBox = true;
+    console.ignoredYellowBox = ['Warning: Each', "Warning: Failed prop type"];
+    console.disableYellowBox = true;
     return (
       <MainTab />
       /*
