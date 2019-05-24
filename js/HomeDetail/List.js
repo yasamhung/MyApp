@@ -8,8 +8,10 @@ import BasicSwiper from '../Tools/BasicSwiper';
 export default class List extends Component{
   render() {
     return (
-          <BasicSwiper />
-          //<NpViewPager />
+            <View>
+              <BasicSwiper />
+              <NpViewPager />
+            </View>
     );
   }
 }
