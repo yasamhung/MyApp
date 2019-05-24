@@ -7,7 +7,7 @@ Just learning to develop app with react-native
 npm link
 ### 2.react-native-swiper[5]
 
-<img src="https://github.com/yasamhung/MyApp/blob/master/display/AppImage1.png" width="400" height="800"/>
+<img src="https://github.com/yasamhung/MyApp/blob/master/display/AppImage1.png" width="200" height="400"/>
 
 [1]:https://expo.github.io/vector-icons/
 [2]:https://github.com/oblador/react-native-vector-icons
