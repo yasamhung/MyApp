@@ -10,6 +10,9 @@ import {
 
 import PropTypes from 'prop-types';
 import Swiper from 'react-native-swiper';
+//import Dialog, { DialogFooter, DialogButton, DialogContent } from 'react-native-popup-dialog';
+import NpDialog from './NpDialog';
+import ImageDialog from './ImageDialog';
 
 var deviceWidth = Dimensions.get('window').width;
 
@@ -25,6 +28,62 @@ export default class NpViewPager extends React.Component {
     constructor(props) {
         super(props);
 
+        //NpDialog表示するか
+        this.state = {
+          NpDialogVisible: false,
+          ImageDialogVisible: false,
+        }
+
+    }
+
+    showDialog(option){
+      switch(option) {
+      case '1':
+        this.setState({NpDialogVisible:true});
+        break;
+
+      case '2':
+        this.setState({ImageDialogVisible:true});
+        break;
+
+      case '3':
+        this.setState({NpDialogVisible:true});
+        break;
+
+      case '4':
+        this.setState({NpDialogVisible:true});
+        break;
+
+      default:
+        //Alert.alert("NUMBER NOT FOUND");
+      }
+    }
+
+    hideDialog(option){
+        switch(option) {
+        case '1':
+          this.setState({NpDialogVisible:false});
+          break;
+
+        case '2':
+          this.setState({ImageDialogVisible:false});
+          break;
+
+        case '3':
+          this.setState({NpDialogVisible:false});
+          break;
+
+        case '4':
+          this.setState({NpDialogVisible:false});
+          break;
+
+        default:
+          //Alert.alert("NUMBER NOT FOUND");
+        }
+    }
+
+    closeDialog(){
+      this.setState({ImageDialogVisible:false});
     }
 
     _renderSwiper(){
@@ -38,17 +97,33 @@ export default class NpViewPager extends React.Component {
                showsButtons={true}
                buttonWrapperStyle={styles.buttonWrapperStyle}
                loop={true}
-               paginationStyle={{bottom:10}}
+               paginationStyle={styles.paginationStyle}
                dotStyle={styles.dotStyle}
                nextButton=<Text style={styles.buttonText}>›</Text>
                prevButton=<Text style={styles.buttonText}>‹</Text>
                //activeDotStyle={{backgroundColor:'rgba(0,0,0,.5)', width: 12, height: 12}}>
                activeDotStyle={styles.activeDotStyle}>
                <View style={styles.swiperItem}>
+                   <TouchableOpacity onPress={()=>this.showDialog('1')}>
                    <Image style={styles.imageStyle0} source={Images[0].src}></Image>
+                   </TouchableOpacity>
+                   <NpDialog
+                      _dialogVisible={this.state.NpDialogVisible}
+                      _url={Images[0].src}
+                      _dialogLeftBtnAction={()=> {this.hideDialog('1')}}
+                      _dialogRightBtnAction={()=>{this.hideDialog('1')}}
+                  />
                </View>
                <View style={styles.swiperItem}>
-                   <Image style={styles.imageStyle} source={Images[1].src}></Image>
+                   <TouchableOpacity onPress={()=>this.showDialog('2')}>
+                    <Image style={styles.imageStyle} source={Images[1].src}></Image>
+                   </TouchableOpacity>
+                   <ImageDialog
+                      _dialogVisible={this.state.ImageDialogVisible}
+                      _url={Images[1].src}
+                      _dialogLeftBtnAction={()=> {this.closeDialog()}}
+                      _dialogRightBtnAction={()=>{this.hideDialog('2')}}
+                  />
                </View>
                <View style={styles.swiperItem}>
                    <Image style={styles.imageStyle} source={Images[2].src}></Image>
@@ -98,18 +173,21 @@ const styles = StyleSheet.create({
         width: deviceWidth,
         height: deviceWidth*45/75,
     },
+    paginationStyle: {
+      bottom:10,
+    },
     activeDotStyle:{
       backgroundColor:'#a945b2',
-       width: 12,
-       height: 12,
-       //borderRadius: 0,
+      width: 12,
+      height: 12,
+       borderRadius: 30,
      },
     dotStyle:{
       backgroundColor:'#e6a1ed',
        width: 8,
        height: 8,
        opacity: 0.4,
-       //borderRadius: 0,
+       borderRadius: 30,//調整小點的圓或方
      },
      buttonWrapperStyle:{
        backgroundColor: 'transparent',

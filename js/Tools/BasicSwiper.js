@@ -45,14 +45,14 @@ var styles = {
     backgroundColor:'#a945b2',
      width: 12,
      height: 12,
-     //borderRadius: 0,
+     borderRadius: 30,//調整小點的圓或方
    },
   dotStyle:{
     backgroundColor:'#e6a1ed',
      width: 8,
      height: 8,
      opacity: 0.4,
-     //borderRadius: 0,
+     borderRadius: 30,//調整小點的圓或方
    },
    buttonWrapperStyle:{
      backgroundColor: 'transparent',
