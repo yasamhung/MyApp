@@ -7,6 +7,10 @@ Just learning to develop app with react-native
 npm link
 ### 2.react-native-swiper[5]
 
+### 3.使用 React Native 实现自定义 Dialog[6]
+
+### 4.react-native 圆形、三角形样式实现[7]
+
 <img src="https://github.com/yasamhung/MyApp/blob/master/display/AppImage1.png" width="200" height="400"/>
 <img src="https://github.com/yasamhung/MyApp/blob/master/display/AppImage2.png" width="200" height="400"/>
 
@@ -15,3 +19,5 @@ npm link
 [3]:https://adon988.logdown.com/posts/4443718-introduction-to-react-native-vector-icons
 [4]:https://blog.csdn.net/baidu_35701759/article/details/70477616
 [5]:https://github.com/leecade/react-native-swiper/blob/master/examples/components/Swiper/index.js
+[6]:https://juejin.im/entry/58bccc72128fe100644a902c
+[7]:https://www.jianshu.com/p/134f4041cf8e
