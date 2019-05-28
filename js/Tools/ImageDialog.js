@@ -187,8 +187,12 @@ const styles = StyleSheet.create({
     },
     imageStyle0:{
         //flex:1,
-        width: SCREEN_WIDTH * 0.8,
-        height: SCREEN_WIDTH * 0.32,
+        width: SCREEN_WIDTH * 0.9,
+        height: SCREEN_WIDTH * 0.28,
+        resizeMode: 'contain', //'cover',
+        //marginRight: 10,
+        //marginBottom: 12,
+        //marginTop: 12,
     },
     X:{
       fontSize:24,

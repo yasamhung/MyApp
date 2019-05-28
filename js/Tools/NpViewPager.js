@@ -200,12 +200,17 @@ const styles = StyleSheet.create({
     imageStyle0:{
         //flex:1,
         width: deviceWidth,
-        height: deviceWidth*45/75,
+        height: deviceWidth * 0.57,
+        resizeMode: 'cover',//'contain',
+        //marginRight: 10,
+        //marginBottom: 12,
+        //marginTop: 12,
     },
     imageStyle:{
         //flex:1,
         width: deviceWidth,
         height: deviceWidth*45/75,
+        resizeMode: 'contain',
     },
     paginationStyle: {
       bottom:10,
