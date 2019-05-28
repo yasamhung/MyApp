@@ -19,5 +19,5 @@ npm link
 [3]:https://adon988.logdown.com/posts/4443718-introduction-to-react-native-vector-icons
 [4]:https://blog.csdn.net/baidu_35701759/article/details/70477616
 [5]:https://github.com/leecade/react-native-swiper/blob/master/examples/components/Swiper/index.js
-[6]:https://juejin.im/entry/58bccc72128fe100644a902c
+[6]:https://github.com/Super-Crab/React_Native_Share/blob/master/App/component/ModalDialog.js
 [7]:https://www.jianshu.com/p/134f4041cf8e
