@@ -32,6 +32,9 @@ export default class NpViewPager extends React.Component {
         this.state = {
           NpDialogVisible: false,
           ImageDialogVisible: false,
+          ImageDialog3Visible: false,
+          ImageDialog4Visible: false,
+          ImageDialog5Visible: false,
         }
 
     }
@@ -47,13 +50,16 @@ export default class NpViewPager extends React.Component {
         break;
 
       case '3':
-        this.setState({NpDialogVisible:true});
+        this.setState({ImageDialog3Visible:true});
         break;
 
       case '4':
-        this.setState({NpDialogVisible:true});
+        this.setState({ImageDialog4Visible:true});
         break;
 
+      case '5':
+        this.setState({ImageDialog5Visible:true});
+        break;
       default:
         //Alert.alert("NUMBER NOT FOUND");
       }
@@ -70,11 +76,15 @@ export default class NpViewPager extends React.Component {
           break;
 
         case '3':
-          this.setState({NpDialogVisible:false});
+          this.setState({ImageDialog3Visible:false});
           break;
 
         case '4':
-          this.setState({NpDialogVisible:false});
+          this.setState({ImageDialog4Visible:false});
+          break;
+
+        case '5':
+          this.setState({ImageDialog5Visible:false});
           break;
 
         default:
@@ -121,18 +131,42 @@ export default class NpViewPager extends React.Component {
                    <ImageDialog
                       _dialogVisible={this.state.ImageDialogVisible}
                       _url={Images[1].src}
-                      _dialogLeftBtnAction={()=> {this.closeDialog()}}
+                      _dialogLeftBtnAction={()=> {this.hideDialog('2')}}
                       _dialogRightBtnAction={()=>{this.hideDialog('2')}}
                   />
                </View>
                <View style={styles.swiperItem}>
+                   <TouchableOpacity onPress={()=>this.showDialog('3')}>
                    <Image style={styles.imageStyle} source={Images[2].src}></Image>
+                  </TouchableOpacity>
+                  <ImageDialog
+                     _dialogVisible={this.state.ImageDialog3Visible}
+                     _url={Images[2].src}
+                     _dialogLeftBtnAction={()=> {this.hideDialog('3')}}
+                     _dialogRightBtnAction={()=>{this.hideDialog('3')}}
+                 />
                </View>
                <View style={styles.swiperItem}>
+                   <TouchableOpacity onPress={()=>this.showDialog('4')}>
                    <Image style={styles.imageStyle} source={Images[3].src}></Image>
+                  </TouchableOpacity>
+                  <ImageDialog
+                     _dialogVisible={this.state.ImageDialog4Visible}
+                     _url={Images[3].src}
+                     _dialogLeftBtnAction={()=> {this.hideDialog('4')}}
+                     _dialogRightBtnAction={()=>{this.hideDialog('4')}}
+                 />
                </View>
                <View style={styles.swiperItem}>
+                   <TouchableOpacity onPress={()=>this.showDialog('5')}>
                    <Image style={styles.imageStyle} source={Images[4].src}></Image>
+                  </TouchableOpacity>
+                  <ImageDialog
+                     _dialogVisible={this.state.ImageDialog5Visible}
+                     _url={Images[4].src}
+                     _dialogLeftBtnAction={()=> {this.hideDialog('5')}}
+                     _dialogRightBtnAction={()=>{this.hideDialog('5')}}
+                 />
                </View>
            </Swiper>
        )

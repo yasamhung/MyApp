@@ -84,9 +84,13 @@ export default class ImageDialog extends Component {
                               <Image style={styles.imageStyle0} source={this.props._url}></Image>
                           </View>
                         }
+                        {
+                          this.props._imageOnly ?
                           <View style={styles.dialogContentImageView}>
-                            <Image style={styles.imageStyle0} source={this.props._url}></Image>
+                              <Image style={styles.imageStyle0} source={this.props._url}></Image>
                           </View>
+                          : null
+                        }
                         <View style={styles.dialogBtnView}>
                               <TouchableHighlight style={styles.dialogBtnViewItem} onPress={this.props._dialogLeftBtnAction}>
                                   <Text style={styles.leftButton}>
@@ -184,7 +188,7 @@ const styles = StyleSheet.create({
     imageStyle0:{
         //flex:1,
         width: SCREEN_WIDTH * 0.8,
-        height: SCREEN_WIDTH * 0.48,
+        height: SCREEN_WIDTH * 0.32,
     },
     X:{
       fontSize:24,
@@ -198,7 +202,9 @@ const styles = StyleSheet.create({
     },
     dialogContentImageView: {
         width: SCREEN_WIDTH * 0.8,
-        height: SCREEN_HEIGHT * 0.28,
+        height: SCREEN_HEIGHT * 0.2,
+        justifyContent: 'center',
+        alignItems: 'center',
         //justifyContent: 'flex-start',
         //alignItems: 'center',
     },
